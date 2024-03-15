@@ -2,7 +2,6 @@
 
 Treinando a lógica de programação com JavaScript
 
-
 ## op-aritmeticos.js
 
 ~~~js
@@ -53,7 +52,7 @@ console.log(`Incrementando o número em 1: ${++numero}`);
 console.log(`Decrementando o número em 1: ${--numero}`);
 console.log(`O número final é igual a ${numero}`);
 
-~~~ 
+~~~
 
 Operadores de atribuição:
 
@@ -62,5 +61,43 @@ Operadores de atribuição:
 * `*=` -> atribuição com multiplicação
 * `/=` -> atribuição com divisão
 * `%=` -> atribuição com resto da divisão
-* `++` -> atribuição com **incremento 1** (pode ser *pré* Ex: `numero ++`ou *pós* incrementado Ex: ` ++ numero`). 
-* `--` -> atribuição com **decremento 1** (pode ser *pré* Ex: `numero --`ou *pós* decrementado) Ex: ` -- numero`
+* `++` -> atribuição com **incremento 1** (pode ser *pré* Ex: `numero ++`ou *pós* incrementado
+Ex: `++ numero`).
+* `--` -> atribuição com **decremento 1** (pode ser *pré* Ex: `numero --`ou *pós* decrementado
+Ex: `-- numero`)
+
+## op-comparacao.js
+
+Neste arquivo conhecemos os operadores de comparação e a estrtutura lógica de decisão **if-else**.
+~~~js
+
+if (condicao) {
+console.log('VERDADEIRO');
+}
+else {
+console.log('FALSO');
+}
+~~~
+
+Esta estrutura exibe no console se a condição testada é `true`(verdadeira) ou `false` (falsa). A condição armazena o resultado da **comparação entre duas variáveis**, como segue:
+
+~~~js
+const a = 'a', b = 'A';
+const condicao = a == b;
+~~~
+
+### Operadores de comparação:
+
+* `===` é estritamente (identico) igual valor e tipo
+* `!==` não é estritamernte igual(valor ou tipo)
+* `''` delimitar texto
+* `==`é igual
+* `!=` não é igual
+* `>` maior que 
+* `<` menor que
+* `>=` maior ou igual
+* `<=` menor ou igual
+* teste no terminal = node op-comparacao.js
+*TRUE É UMA PALAVRA RESERVADA PARA O VALOR VERDADEIRO, FALSE=FALSO
+*estrtutura if - else
+* if (expressão para ser avaliada){código que será executado se a expressão for verdadeira}

@@ -10,16 +10,15 @@
   //  condigo se nenhuma for negativa
 //}
 
-const nota1 = 6;
-const nota2 = 5;
-const nota3 = 5;
+const nota1 = 6, nota2 = 5, nota3 = 5;
 const media  = (nota1 + nota2 + nota3) /3;
 if (media>=7) {
-    console.log('Aprovado');
+    console.log(`Aprovado com nota ${media.toFixed(2)}`);
     }
     else if (media>=5) {
-    console.log('Exame');
+    console.log(`Exame com nota ${media .toFixed(2)}`);
     }
     else {
-        console.log('Reprovado');
+        console.log(`Reprovado com nota ${media.toFixed(2)}`);
         }
+        // .toFixed(n), para colocar quantas casas decimais

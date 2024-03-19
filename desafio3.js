@@ -12,33 +12,37 @@
 //Kelvin      | Fahrenheit |tC = tK - 273.15
 //Kelvin      | Celsius    |tF = (tK - 273.15) * 9/5 + 32
 
-const
-tempatual = window.prompt('Digite a temperatura atual');
-escalaatual = window.prompt('Digite a escala atual sem os grau º');
-escalaconvertida = window.prompt('Digite a escala que deseja');
+const temperatura = window.prompt('digite a temperatura atual:'),
+      atual = window.prompt('Informe a unidade de temperatura atual para converter:C, F ou K'),
+      conversao = window.prompt('informe para qual escala você deseja converter: C, F ou K');
+      
+      const 
+      CF = (temperatura * 9/5) + 32,
+      CK = temperatura + 273.15,
+      FC = (temperatura - 32) * 5/9,
+      FK = (temperatura + 459.67) * 5/9,
+      KC = temperatura + 273.15,
+      KF = temperatura * 9/5 - 459.67;
 
-if (escalaatual === 'C' && escalaconvertida === 'F') {
-    calculo = ((tempatual * 9/5) + 32 )
-    window.alert(`O resultado da conversão entre temperatura de Celsius para Fahrenheit é de : ${calculo} °F`);
-    }
-    if else (escalaatual === 'C' && escalaconvertida === 'K') {
-        calculo = (tempatual= tC + 273.15);
-        window.alert(`O resultado da conversão entre temperatura de Celsius para Kelvin é de : ${calculo} °K`);
+      if  ( atual == "C" ||  "c" && conversao == "F" ||  "f"){ 
+        window.alert (`temperatura = ${CF} `); 
         }
-        if else (escalaatual === 'F' && escalaconvertida === 'C') {
-            calculo = ((tF - 32) * (5/9));
-            window.alert(`O resultado da conversão entre temperatura de Celsius para Kelvin é de : ${calculo} °K`);
-            }
-            if else (escalaatual === 'F' && escalaconvertida === 'K') {
-                calculo = ((tF - 32) * (5/9) + 273.15);
-                window.alert(`O resultado da conversão entre temperatura de Celsius para Kelvin é de : ${calculo} °K`);
-                }
-                if else (escalaatual === 'K' && escalaconvertida === 'C') {
-                    calculo = (tempatual= tK - 273.15);
-                    window.alert(`O resultado da conversão entre temperatura de Celsius para Kelvin é de : ${calculo} °K`);
-                    }
-                    else (escalaatual === 'K' && escalaconvertida === 'F') {
-                        calculo = (tempatual= (tK - 273.15) * (9/5) + 32);
-                        window.alert(`O resultado da conversão entre temperatura de Celsius para Kelvin é de : ${calculo} °K`);
-                        }
-                        
+        else if ( atual == "C" ||  "c" && conversao == "K" || "k" ){ 
+          window.alert (`temperatura = ${CK}`);
+      }
+        else if ( atual == "F" ||  "f" && conversao == "C" ||  "c"){
+           window.alert (`temperatura = ${FC}`);
+        }
+        else if ( atual == "F" ||  "f" && conversao == "K" ||  "k"){
+          window.alert (`temperatura = ${FK}`);
+        }
+        else if (atual == "K" ||  "k" && conversao == "C" ||  "c"){
+          window.alert (`temperatura = ${KC}`);
+        }
+        else if ( atual == "K" ||  "k" && conversao == "F" ||  "f" ){
+          window.alert (`temperatura = ${KF}`);
+        }
+        else {
+          window.alert (` Temperatura não reconhecida`);
+        }
+        console.log(`O valor não é NAN: $(!ISnAn(TEMPERATURA)})`);

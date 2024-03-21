@@ -19,21 +19,23 @@ function calculeimc(){
     peso = window.prompt('Digite seu peso'),
     altura = window.prompt('Digite sua altura'),
     imc = peso / (altura ** 2);
+    let mensagem;
     if (imc<18.5) {
-        window.alert(`IMC: ${imc} -- Abaixo do peso`);
+        mensagem = `IMC: ${imc.toFixed(1)} -- Abaixo do peso`;
         }
         else if (imc<24,9) {
-        window.alert(`IMC: ${imc} -- Peso normal`);
+        mensagem = `IMC: ${imc.toFixed(1)} -- Peso normal`;
         }
         else if (imc<29,9){
-            window.alert(`IMC: ${imc} -- Sobrepeso`);
+            mensagem = `IMC: ${imc.toFixed(1)} -- Sobrepeso`;
             }
             else if (imc<34,9){
-                window.alert(`IMC: ${imc} -- Obesidade grau I`);
+                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau I`;
             }
             else if (imc<39,9){
-                window.alert(`IMC: ${imc} -- Obesidade grau II`);
+                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau II`;
             }else {
-                window.alert(`IMC: ${imc} -- Obesidade grau III`);
+                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau III`;
             }
+            return mensagem;
 }

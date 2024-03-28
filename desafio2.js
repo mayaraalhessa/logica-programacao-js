@@ -14,28 +14,31 @@
 //O IMC é apenas uma medida geral e não leva em consideração a composição corporal (músculos versus gordura). Pessoas com muita massa muscular podem ter um IMC alto, mesmo que não sejam obesas. É importante consultar um médico ou nutricionista para uma avaliação individualizada.
 //Para mais informações:
 // Organização Mundial da Saúde (OMS): https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight
-function calculeimc(){
-    const
-    peso = window.prompt('Digite seu peso'),
-    altura = window.prompt('Digite sua altura'),
-    imc = peso / (altura ** 2);
+function calculaIMC(peso, altura) {
+
+    const imc = peso / altura ** 2;
     let mensagem;
-    if (imc<18.5) {
-        mensagem = `IMC: ${imc.toFixed(1)} -- Abaixo do peso`;
-        }
-        else if (imc<24,9) {
-        mensagem = `IMC: ${imc.toFixed(1)} -- Peso normal`;
-        }
-        else if (imc<29,9){
-            mensagem = `IMC: ${imc.toFixed(1)} -- Sobrepeso`;
-            }
-            else if (imc<34,9){
-                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau I`;
-            }
-            else if (imc<39,9){
-                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau II`;
-            }else {
-                mensagem = `IMC: ${imc.toFixed(1)} -- Obesidade grau III`;
-            }
-            return mensagem;
+        
+    if (imc < 18.5) {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Abaixo do peso`;
+    
+    } else if (imc < 25) {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Peso normal`;
+    
+    } else if (imc < 30) {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Sobrepeso`;
+    
+    } else if (imc < 35) {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Obesidade grau I`;
+    
+    } else if (imc < 40) {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Obesidade grau II`;
+    
+    } else {
+        mensagem = `IMC: ${imc.toFixed(1)} --> Obesidade grau III`;
+    }
+
+    return mensagem;
+
 }
+

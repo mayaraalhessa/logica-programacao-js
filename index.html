@@ -3,34 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programas</title>
+    <title>Document</title>
 </head>
-<body style="background-color: rgb(245, 157, 225);">
-    <header style="text-align: center;">Programas</header>
-    <h1 style="text-align: center;">Programinhas: </h1>
-    <br>
-    <br>
+<body>
+    <h1>Programinhas</h1>
+    <!-- TODO: eliminar esses botões -->
     <button type="button" onclick="calculaIMC()">Calculadora IMC</button>
-    <button type="button" onclick="converteTemperatura()">Conversor de Temperatura</button>
+    <button type="button" onclick="converteTemperatura()">Conversor Temperatura</button>
 
-    <h2>Calculadora IMC: </h2>
-    <label for="peso">Peso:</label>
-    <input type="number" id="peso" step="0.5" min="0" max="1000">
-    <label for="altura">Altura:</label>
-    <input type="number" id="altura" step="0.01"min="0" max="3.00">
-    <button type="button"id="btCalIMC">Calcular IMC</button>
-    <button type="reset">lIMPAR</button>
+    <h2>Calculadora de IMC</h2>
 
-<script src="desafio2.js"></script>
-<script src="desafio3.js"></script>
+    <form action="" id="formIMC">
+
+        <label for="peso">Peso:</label>
+        <input type="number" id="peso" step="0.5" min="0" max="1000">
+    
+        <label for="altura">Altura:</label>
+        <input type="number" id="altura" step="0.01" min="0" max="3">
+    
+        <button type="button" id="btCalcIMC">Calcular IMC</button>
+        <button type="reset" id="btLimpaIMC">Limpar</button>
+        <!-- <button type="reset" id="btLimpaIMC" onclick="document.querySelector('#resultadoIMC').innerHTML = '';">Limpar</button> -->
+        
+    </form>
+
+    <div id="resultadoIMC"></div>
+
+    <h2>Conversor de Temperatura</h2>
+
+    <form action="">
+
+        <label for="valorTemperatura">Temperatura:</label>
+        <input type="number" id="valorTemperatura">
+
+        <label for="escalaAtual">De:</label>
+        <select id="escalaAtual">
+            <option value="C" selected>Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+        </select>
+
+        <label for="escalaConvertida">Para:</label>
+        <select id="escalaConvertida">
+            <option value="C">Celsius</option>
+            <option value="F" selected>Fahrenheit</option>
+            <option value="K">Kelvin</option>
+        </select>
+
+        <button type="button" id="btConvTemp">Converter</button>
+        <button type="reset"id= "btLimpaTemp">Limpar</button>
+
+    </form>
+
+    <div id="resultadoTemp"></div>
+    <script src="desafio2.js"></script>
+    <script src="desafio3.js"></script>
+    
+    <script>
+//inicio desafio 2
+        document.querySelector('#btCalcIMC').addEventListener('click', function () {
+            const peso = document.querySelector('#peso').value;
+            const altura = document.querySelector('#altura').value;
+            const imc = calculaIMC(peso, altura);
+            console.log(imc);
+            // (parte de dentro do HTML) -> innerHTML
+            document.querySelector('#resultadoIMC').innerHTML = imc;
+        });
+
+        document.querySelector('#btLimpaIMC').addEventListener('click', function () {
+            document.querySelector('#resultadoIMC').innerHTML = '';
+        });
+// fim do desafio 2
+    </script>
+
 <script>
-    document.querySelector('#btCalIMC'). addEventListener('click', function()
-    {
-        const peso = document.querySelector ('#peso').value;
-        const altura = document.querySelector ('#altura').value;
-        const imc = calculaIMC(peso, altura);
-        console.log(imc);
-    )}
+
+    document.querySelector('#btConvTemp').addEventListener('click', function () {
+        const temperaturaAtual = document.querySelector('#valortemperatura').value;
+        const escalaAtual = document.querySelector('#escalaAtual').value;
+        const escalaConvertida = document.querySelector('#escalaConvertida').value;
+        const conversao = converteTemperatura(temperaturaAtual, escalaAtual, escalaConvertida);
+        // (parte de dentro do HTML) -> innerHTML
+        document.querySelector('#resultadoTemp').innerHTML = `TemperaturaConvertida: ${conversao.temperaturaConvertida + conversao.escalaConversao}`;
+    });
+
+    document.querySelector('#btLimpaTemp').addEventListener('click', function () {
+            document.querySelector('#resultadoTemp').innerHTML = '';
+        });  
 </script>
 </body>
 </html>

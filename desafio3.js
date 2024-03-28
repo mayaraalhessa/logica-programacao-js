@@ -11,39 +11,73 @@
 //Fahrenheit  | Kelvin     |tK = (tF - 32) * 5/9 + 273.15
 //Kelvin      | Fahrenheit |tC = tK - 273.15
 //Kelvin      | Celsius    |tF = (tK - 273.15) * 9/5 + 32
-function converteTemperatura(){
-  const temperatura = window.prompt('digite a temperatura atual:'),
-  atual = window.prompt('Informe a unidade de temperatura atual para converter:C, F ou K'),
-  conversao = window.prompt('informe para qual escala você deseja converter: C, F ou K');
-  
-  const 
-  CF = (temperatura * 9/5) + 32,
-  CK = temperatura + 273.15,
-  FC = (temperatura - 32) * 5/9,
-  FK = (temperatura + 459.67) * 5/9,
-  KC = temperatura + 273.15,
-  KF = temperatura * 9/5 - 459.67;
+function converteTemperatura(temperaturaAtual, escalaAtual, escalaConversao) {
+let temperaturaConvertida, msgErro = 'OK';
 
-  if  ( atual == "C" ||  "c" && conversao == "F" ||  "f"){ 
-    window.alert (`temperatura = ${CF} `); 
-    }
-    else if ( atual == "C" ||  "c" && conversao == "K" || "k" ){ 
-      window.alert (`temperatura = ${CK}`);
+  if (!isNaN(temperaturaAtual)) {
+
+    escalaAtual = escalaAtual.toUpperCase();
+    escalaConversao = escalaConversao.toUpperCase();
+
+      if (escalaAtual === 'C') {
+  
+          if (escalaConversao === 'K') {
+            temperaturaConvertida = temperaturaAtual + 273.15
+  
+          } else if (escalaConversao === 'F') {
+            temperaturaConvertida = (temperaturaAtual * 9 / 5) + 32;
+  
+          } else if (escalaConversao === 'C') {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+  
+          } else {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+          }
+  
+      } else if (escalaAtual === 'F') {
+  
+          if (escalaConversao === 'K') {
+            temperaturaConvertida = (temperaturaAtual + 459.67) * 5 / 9;
+  
+          } else if (escalaConversao === 'C') {
+            temperaturaConvertida =(temperaturaAtual - 32) * 5 / 9;
+  
+          } else if (escalaConversao === 'F') {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+  
+          } else {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+          }
+  
+      } else if (escalaAtual === 'K') {
+  
+          if (escalaConversao === 'C') {
+            temperaturaConvertida =`${temperaturaAtual} em ${escalaAtual} -> ${temperaturaAtual - 273.15} em ${escalaConversao}`;
+  
+          } else if (escalaConversao === 'F') {
+            temperaturaConvertida =`${temperaturaAtual} em ${escalaAtual} -> ${temperaturaAtual * 9 / 5 - 459.67} em ${escalaConversao}`;
+  
+          } else if (escalaConversao === 'K') {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Selecione uma escala de CONVERSÃO diferente da ATUAL.`;
+  
+          } else {
+            msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+          }
+  
+      } else {
+        msgErro =`ERRO: Escala Selecionada: ${escalaConversao}. Essa escala não existe ou não está disponível neste programa.`;
+      }
+  
+  } else {
+    mensagem ='O número digitado para conversão não é um número válido.';
   }
-    else if ( atual == "F" ||  "f" && conversao == "C" ||  "c"){
-       window.alert (`temperatura = ${FC}`);
-    }
-    else if ( atual == "F" ||  "f" && conversao == "K" ||  "k"){
-      window.alert (`temperatura = ${FK}`);
-    }
-    else if (atual == "K" ||  "k" && conversao == "C" ||  "c"){
-      window.alert (`temperatura = ${KC}`);
-    }
-    else if ( atual == "K" ||  "k" && conversao == "F" ||  "f" ){
-      window.alert (`temperatura = ${KF}`);
-    }
-    else {
-      window.alert (` Temperatura não reconhecida`);
-    }
-    console.log(`O valor não é NAN: $(!ISnAn(TEMPERATURA)})`);
+//retornadndo em json = javascript object notation
+  return {
+  temperaturaAtual: temperaturaAtual, 
+  temperaturaConvertida:temperaturaConvertida, 
+  escalaAtual: escalaAtual, 
+  escalaConversao: escalaConversao, 
+  msgErro: msgErro
 }
+}
+//array é um conjunto de dados englobados em uma variavel só, pode ser chamado de vetor unidimensional e é uma lista de informações.

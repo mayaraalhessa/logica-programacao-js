@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(240, 168, 212);
+}
+
+.titulo-pagina {
+    width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+main {
+    width: 600px;
+    /* border-width: 1px; */
+    /* border-style: solid; */
+    /* border-color: black; */
+    border: 1px solid black; /* shorthand para a borda */
+    margin: auto;
+    padding: 2rem;
+    background-color: #f398e4;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px #888;
+}
+
+.elementos-em-linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.botoes {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+input {
+    width: 100%;
+    line-height: 2.2;
+    border-radius: 4px;
+    border: 1px solid #f153c2;
+    padding-left: 8px;
+    margin-top: 8px;
+    /* outline: none; */
+}
+
+#resultado {
+    border: 1px solid black;
+    height: 2rem;
+    margin: 2rem 0 0 0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row; /* estabelece a direção de alinhamento */
+    justify-content: center; /* alinha no eixo principal */
+    align-items: center; /* alinha no eixo secundário */
+}
+
+button {
+    width: 100%;
+    line-height: 2.2;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: inset 2px 2px 2px #333333;
+}
+
+.acao-positiva {
+    background-color: #ec20b9;
+    color: #ffffff;
+}
+
+.acao-positiva:hover {
+    background-color: #eb6ed6;
+}
+
+.acao-positiva:active {
+    background-color: #e778c2;
+}
+
+.acao-negativa {
+    background-color: #8753e8;
+    color: #ffffff;
+}
+
+.acao-negativa:hover {
+    background-color: #da76ee;
+}
+
+.acao-negativa:active {
+    background-color: #d123e8;
+}

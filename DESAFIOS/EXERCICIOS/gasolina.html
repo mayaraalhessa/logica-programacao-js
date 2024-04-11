@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Posto de Gasolina </title>
+</head>
+
+<body>
+
+    <table border="1">
+
+        <caption>Posto de Gasolina</caption>
+
+        <thead>
+            <tr>
+                <th>Álcool <strong>R$ 2,89</strong></th>
+                <th>Gasosa <strong>R$ 5,19</strong></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Até 20 litros, desconto de 3% por litro</td>
+                <td>Até 20 litros, desconto de 4% por litro</td>
+            </tr>
+
+            <tr>
+                <td>Acima de 20 litros, desconto de 5% por litro</td>
+                <td>Acima de 20 litros, desconto de 6% por litro</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="" id="posto">
+        <label for="combustivel" id="combustivel">Escolha o combustível desejado:</label>
+        <label for="litros">Insira a quantidade de litros:</label>
+        <input type="number" id="litros">
+        <select id="tipoCombustivel">
+            <option value="G" selected>Gasosa</option>
+            <option value="A" selected>Álcool</option>
+        </select>
+
+        <button type="button" id="btCombustivel">Calcular</button>
+        <button type="reset" id="btReset">Limpar</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+
+        document.getElementById('btCombustivel').addEventListener('click', function () {
+            litros = parseFloat(document.getElementById('litros').value);
+            tipoCombustivel = document.getElementById('tipoCombustivel').value;
+
+            const valorFinal = descontoCombustivel(tipoCombustivel, litros);
+
+            document.getElementById('resultado').innerHTML = valorFinal;
+        });
+
+        document.querySelector('#btReset').addEventListener('click', function () {
+            document.querySelector('#resultado').innerHTML = "";
+        });
+
+        function descontoCombustivel(tipoCombustivel, litros) {
+        }
+    </script>
+</body>
+
+</html>

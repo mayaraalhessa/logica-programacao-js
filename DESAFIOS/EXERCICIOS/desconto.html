@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tem desconto?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="space"></div>
+
+    <h1 class="tituloDaPagina">Desconto Funcionário</h1>
+
+    <section>
+
+        <form action="">
+    
+            <div class="elementosdesc">
+                
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor">
+        
+                <label for="tipo" id="comprador">Tipo:</label>
+        
+                <select id="tipoComprador">
+                    <option value="clientecomum" selected>Cliente comum</option>
+                    <option value="funcionario">Funcionário</option>
+                    <option value="clientevip">VIP</option>
+                </select>
+            </div>
+    
+        </form>
+
+        <div class="botoes">
+            <button type="button" id="btCalcular">Calcular</button>
+            <button type="reset" id="btReset">Limpar</button>
+    
+        </div>
+    
+        <div id="resultado"></div>
+    </section>
+
+
+    <script>
+
+        document.getElementById('btCalcular').addEventListener('click', function () {
+
+            valor = parseFloat(document.getElementById('valor').value);
+            tipoComprador = document.getElementById('tipoComprador').value;
+            const valorFinal = DescontoFuncionario(valor, tipoComprador);
+
+            document.getElementById('resultado').innerHTML = valorFinal;
+        });
+
+        document.querySelector('#btReset').addEventListener('click', function () {
+            document.querySelector('#resultado').innerHTML = "";
+        });
+
+        function DescontoFuncionario(valor, tipoComprador) {
+
+
+            if (tipoComprador === "clientevip") {
+                resultado = valor - (valor * 0.05);
+            }
+            else if (tipoComprador === "funcionario") {
+                resultado = valor - (valor * 0.1);
+            }
+            else {
+                resultado = valor;
+            }
+
+            return resultado;
+        }
+
+    </script>
+
+</body>
+
+</html>

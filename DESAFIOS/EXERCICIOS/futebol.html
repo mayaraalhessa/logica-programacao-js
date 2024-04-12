@@ -4,28 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <title>Quem está ganhando?</title>
 </head>
 
 <body>
+    <a href="../../index.html">↩ Home</a>
+    <h1 class="titulo-pagina">Não se mexe, em time que está ganhando</h1>
+    <br>
+    <h2>Descubra qual time de futebol foi o vencedor na partida, através do placar do jogo de futebol</h2>
+    <br>
     <div class="space"></div>
-
     <section>
 
         <form action="">
 
             <div class="elementosfut">
 
-                <label for="time1">Time 1:</label>
+                <label for="time1">Gols do Time 1:</label>
                 <input type="number" id="time1" step="0.5" min="1" max="1000">
 
-                <label for="time2">Time 2:</label>
+                <label for="time2">Gols do Time 2:</label>
                 <input type="number" id="time2" step="0.5" min="1" max="1000">
 
             </div>
 
-            <div class="butao">
+            <div class="botao">
                 <button type="button" id="btResultado">Resultado</button>
                 <button type="reset" id="btReset">Limpar</button>
             </div>

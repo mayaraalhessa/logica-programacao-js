@@ -4,41 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <title>Bem-vindo ao Posto de Gasolina </title>
 </head>
 
 <body>
-
-    <table border="1">
-
-        <caption>Posto de Gasolina</caption>
-
-        <thead>
-            <tr>
-                <th>Álcool <strong>R$ 2,89</strong></th>
-                <th>Gasosa <strong>R$ 5,19</strong></th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>Até 20 litros, desconto de 3% por litro</td>
-                <td>Até 20 litros, desconto de 4% por litro</td>
-            </tr>
-
-            <tr>
-                <td>Acima de 20 litros, desconto de 5% por litro</td>
-                <td>Acima de 20 litros, desconto de 6% por litro</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <a href="../../index.html">↩ Home</a>
+<br>
+<h1 class="titulo-pagina">Posto de Gasolina/h1>
+                
     <form action="" id="posto">
-        <label for="combustivel" id="combustivel">Escolha o combustível desejado:</label>
         <label for="litros">Insira a quantidade de litros:</label>
         <input type="number" id="litros">
+        <label for="combustivel" id="combustivel">Escolha o combustível desejado:</label>
         <select id="tipoCombustivel">
-            <option value="G" selected>Gasosa</option>
+            <option value="G" selected>Gasolina</option>
             <option value="A" selected>Álcool</option>
         </select>
 
@@ -46,6 +27,46 @@
         <button type="reset" id="btReset">Limpar</button>
     </form>
     <div id="resultado"></div>
+    <main>
+        <table>
+            <tr>
+                <th>
+                Combustível                
+                </th>
+                <th>
+                Valor
+                </th> 
+            <tr>
+                <td>Álcool </td>
+                <td>R$ 2,89</td>
+            </tr>
+        </table>
+        <nav>
+            <ul>
+                <li> Até 20 litros, desconto de 3% por litro </li>
+                <li> Acima de 20 litros, desconto de 5% por litro</li>
+            </ul></nav>
+            <br>
+            <br>
+                <table>
+                    <tr>
+                        <th>
+                        Combustível                
+                        </th>
+                        <th>
+                        Valor
+                        </th> 
+            <tr>
+                <td>Gasolina</td>
+                <td>R$ 5,19</td>
+            </tr> 
+        </table>
+                <nav>
+                    <ul>
+                        <li> Até 20 litros, desconto de 4% por litro </li>
+                        <li> Acima de 20 litros, desconto de 6% por litro</li>
+                    </ul></nav>     
+    </main>
     <script>
 
         document.getElementById('btCombustivel').addEventListener('click', function () {
